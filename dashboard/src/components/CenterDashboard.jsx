@@ -8,15 +8,19 @@ import RevenueByLocation from "../ui/RevenueByLocation.jsx";
 function DashboardCenter() {
   return (
     <main className="dashboard-center">
-      <SummaryCards />
-      <div className="center-row">
+      {/* Row with Summary + Projections */}
+      <div className="dashboard-row top-row">
+        <SummaryCards />
         <ProjectionsChart />
       </div>
-      <div className="center-row">
+
+      {/* Row with Revenue Trend + Revenue by Location */}
+      <div className="dashboard-row">
         <RevenueTrend />
         <RevenueByLocation />
       </div>
     </main>
   );
 }
+
 export default DashboardCenter;

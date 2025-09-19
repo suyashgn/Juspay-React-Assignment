@@ -1,0 +1,82 @@
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  grid-template-rows: repeat(2, auto);   /* 2 rows */
+  gap: 12px;  /* tighter spacing */
+  width: 100%;
+  max-width: 420px; /* smaller container */
+}
+
+/* Individual summary card */
+.summary-card {
+  background: #f5f8fa;
+  border-radius: 10px;
+  padding: 12px;   /* smaller padding */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+
+.card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* pushes value left, change right */
+  margin-top: 6px;
+}
+
+.card-value {
+  font-size: 18px;  /* smaller */
+  font-weight: 700;
+  color: #111;
+  margin: 0;  /* remove extra spacing */
+}
+
+.card-change {
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin: 0; /* remove top margin so it aligns nicely */
+}
+.summary-card:hover {
+  transform: translateY(-2px); /* subtle hover */
+}
+
+/* Accent variations */
+.summary-card.accent-blue { background: #E3F5FF; }
+.summary-card.accent-lightblue { background: #E5ECF6; }
+
+/* Text styles */
+.card-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+}
+
+.card-value {
+  font-size: 18px;  /* smaller */
+  margin: 6px 0;
+  font-weight: 700;
+  color: #111;
+}
+
+.card-change {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.card-change.positive { color: #000; }
+.card-change.negative { color: #000; }
+
+/* 📱 Responsive tweaks */
+@media (max-width: 500px) {
+  .summary-cards {
+    grid-template-columns: 1fr; /* stack vertically */
+  }
+}

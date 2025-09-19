@@ -6,7 +6,12 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
+
+  overflow-y: auto;       
+  scrollbar-width: thin;  
+  scrollbar-color: #d1d5db transparent; 
 }
+
 
 /* Profile */
 .profile {
@@ -26,14 +31,14 @@
 
 /* Section */
 .section {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 .section-title {
   font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #9ca3af;
-  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #6b7280; 
+  margin-bottom: 10px;
 }
 
 /* List */
@@ -44,8 +49,7 @@
 .list-item {
   display: flex;
   align-items: center;
-  gap: 14px; /* more space between icon & text */
-  padding: 8px 10px; /* better click area */
+  padding: 8px 12px;
   margin-bottom: 4px;
   border-radius: 6px;
   cursor: pointer;
@@ -65,13 +69,13 @@
 /* Submenu */
 .sub-list {
   list-style: none;
-  padding-left: 28px; /* consistent indent */
+  padding-left: 28px;
   margin-top: 6px;
 }
 .sub-item {
   padding: 5px 0;
   cursor: pointer;
-  color: #374151;
+  color: #4b5563;
   font-size: 14px;
   transition: color 0.2s;
 }
@@ -83,16 +87,27 @@
 .icon {
   width: 18px;
   height: 18px;
+  margin-right: 10px; /* consistent space from text */
   flex-shrink: 0;
 }
 
-/* Dropdown arrow */
+
 .arrow {
   width: 12px;
   height: 12px;
-  margin-left: 6px; /* small gap after text */
   transition: transform 0.2s ease;
 }
+
 .arrow.rotate {
   transform: rotate(90deg);
+}/* Chrome/Edge scroll style */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #d1d5db; /* light gray thumb */
+  border-radius: 3px;
+}
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
 }
