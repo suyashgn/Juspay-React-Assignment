@@ -44,8 +44,8 @@
 .list-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 8px;
+  gap: 14px; /* more space between icon & text */
+  padding: 8px 10px; /* better click area */
   margin-bottom: 4px;
   border-radius: 6px;
   cursor: pointer;
@@ -54,26 +54,45 @@
 }
 .list-item:hover {
   background: #f3f4f6;
-  color: #000;
+  color: #111827;
 }
 .list-item.active {
-  background: #f3f4f6;
-  color: #000;
-  font-weight: 500;
+  background: #e5e7eb;
+  color: #111827;
+  font-weight: 600;
 }
 
 /* Submenu */
 .sub-list {
   list-style: none;
-  padding-left: 20px;
+  padding-left: 28px; /* consistent indent */
   margin-top: 6px;
 }
 .sub-item {
-  padding: 4px 0;
+  padding: 5px 0;
   cursor: pointer;
   color: #374151;
+  font-size: 14px;
   transition: color 0.2s;
 }
 .sub-item:hover {
   color: #000;
+}
+
+/* Icons */
+.icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Dropdown arrow */
+.arrow {
+  width: 12px;
+  height: 12px;
+  margin-left: 6px; /* small gap after text */
+  transition: transform 0.2s ease;
+}
+.arrow.rotate {
+  transform: rotate(90deg);
 }

@@ -1,17 +1,16 @@
 import { useState } from "react";
 import "../styles/Sidebar.css";
-import {
-  LayoutDashboard,
-  ShoppingCart,
-  BookOpen,
-  User,
-  FileText,
-  Users,
-  Briefcase,
-  Rss,
-  MessageSquare,
-} from "lucide-react";
 
+import DashboardIcon from "../assets/sidebar/ChartPieSlice.svg";
+import CartIcon from "../assets/sidebar/cart.svg";
+import BookIcon from "../assets/sidebar/Notebook.svg";
+import UserIcon from "../assets/sidebar/user.svg";
+import FileIcon from "../assets/sidebar/IDcard.svg";
+import UsersIcon from "../assets/sidebar/users.svg";
+import BlogIcon from "../assets/sidebar/Notebook.svg";
+import SocialIcon from "../assets/sidebar/social.svg";
+import Arrow2Icon from "../assets/sidebar/arrowright.svg";
+import Mainuser from "../assets/sidebar/usermain.svg";
 
 
 const Sidebar = () => {
@@ -25,11 +24,7 @@ const Sidebar = () => {
     <aside className="sidebar">
       {/* Profile */}
       <div className="profile">
-        <img
-          src="https://i.pravatar.cc/40"
-          alt="profile"
-          className="avatar"
-        />
+        <img src={Mainuser} alt="profile" className="avatar" />
         <span className="profile-name">ByeWind</span>
       </div>
 
@@ -47,25 +42,39 @@ const Sidebar = () => {
         <h2 className="section-title">Dashboards</h2>
         <ul className="list">
           <li className="list-item active">
-            <LayoutDashboard size={16} /> Default
+            <img src={DashboardIcon} alt="Dashboard" className="icon" /> Default
           </li>
-          <li
-            onClick={() => toggleMenu("ecommerce")}
-            className="list-item"
-          >
-            <ShoppingCart size={16} /> eCommerce
+
+          <li onClick={() => toggleMenu("ecommerce")} className="list-item">
+            <img
+              src={Arrow2Icon}
+              alt="arrow"
+              className={`arrow ${open === "ecommerce" ? "rotate" : ""}`}
+            />
+            <img src={CartIcon} alt="Ecommerce" className="icon" />
+            eCommerce
+        
           </li>
-          <li
-            onClick={() => toggleMenu("projects")}
-            className="list-item"
-          >
-            <LayoutDashboard size={16} /> Projects
+
+          <li onClick={() => toggleMenu("projects")} className="list-item">
+            <img
+              src={Arrow2Icon}
+              alt="arrow"
+              className={`arrow ${open === "projects" ? "rotate" : ""}`}
+            />
+            <img src={DashboardIcon} alt="Projects" className="icon" />
+            Projects
           </li>
-          <li
-            onClick={() => toggleMenu("courses")}
-            className="list-item"
-          >
-            <BookOpen size={16} /> Online Courses
+
+          <li onClick={() => toggleMenu("courses")} className="list-item">
+            <img
+              src={Arrow2Icon}
+              alt="arrow"
+              className={`arrow ${open === "courses" ? "rotate" : ""}`}
+            />
+            <img src={BookIcon} alt="Courses" className="icon" />
+            Online Courses
+          
           </li>
         </ul>
       </div>
@@ -76,11 +85,15 @@ const Sidebar = () => {
         <ul className="list">
           {/* User Profile */}
           <li>
-            <div
-              onClick={() => toggleMenu("user")}
-              className="list-item"
-            >
-              <User size={16} /> User Profile
+            <div onClick={() => toggleMenu("user")} className="list-item">
+              <img
+                src={Arrow2Icon}
+                alt="arrow"
+                className={`arrow ${open === "user" ? "rotate" : ""}`}
+              />
+              <img src={UserIcon} alt="User" className="icon" />
+              User Profile
+              
             </div>
             {open === "user" && (
               <ul className="sub-list">
@@ -94,21 +107,22 @@ const Sidebar = () => {
           </li>
 
           <li className="list-item">
-            <FileText size={16} /> Account
+            <img src={FileIcon} alt="Account" className="icon" /> Account
           </li>
           <li className="list-item">
-            <Users size={16} /> Corporate
+            <img src={UsersIcon} alt="Corporate" className="icon" /> Corporate
           </li>
           <li className="list-item">
-            <Rss size={16} /> Blog
+            <img src={BlogIcon} alt="Blog" className="icon" /> Blog
           </li>
           <li className="list-item">
-            <MessageSquare size={16} /> Social
+            <img src={SocialIcon} alt="Social" className="icon" /> Social
           </li>
         </ul>
       </div>
     </aside>
   );
 };
+
 
 export default Sidebar;
