@@ -12,10 +12,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [darkMode, setDarkMode] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
+  const toggleDarkMode = () => setDarkMode(!darkMode);
   return (
     <Router>
       <Routes>

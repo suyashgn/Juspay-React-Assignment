@@ -1,0 +1,31 @@
+.order-table, .order-toolbar, .order-pagination {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .order-table { display: none; }
+  .order-card-list { display: block; }
+}
+@media (min-width: 769px) {
+  .order-table { display: block; }
+  .order-card-list { display: none; }
+}
+.order-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0 1em;
+}
+.order-card {
+  background: #fff;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.order-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  margin: 1em 0;
+}

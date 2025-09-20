@@ -11,3 +11,39 @@ html, body {
   overflow: hidden; 
   height: 100%;    
 }
+
+
+/* Light Mode (default) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --card-bg: #F7F9FB;
+  --border-color: #e5e7eb;
+  --icon-filter: none;
+}
+
+/* Dark Mode */
+.dark-mode {
+  --bg-color: #1C1C1C;
+  --text-color: #ffffff;
+  --card-bg: #282828;
+  --border-color: #333;
+  --icon-filter: brightness(0) invert(1);
+}
+
+/* Apply variables */
+/* body, .app {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s;
+}
+
+.card, .dashboard-section, .topnav, .sidebar {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  transition: all 0.3s;
+}
+
+.icon {
+  filter: var(--icon-filter);
+} */
