@@ -1,0 +1,30 @@
+.trend-card {
+  background: #F7F9FB;
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.trend-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trend-legend {
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 12px;
+  color: #777;
+}
+
+.trend-legend.current {
+  color: #222;
+}
+
+.trend-legend.prev {
+  color: #3e9af3;
+}

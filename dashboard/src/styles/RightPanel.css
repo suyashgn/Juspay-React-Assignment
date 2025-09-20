@@ -9,6 +9,17 @@
   overflow-y: auto;
 }
 
+.right-panel::-webkit-scrollbar {
+  width: 5px;
+}
+.right-panel::-webkit-scrollbar-thumb {
+  background-color: #a8aeb5; /* light gray thumb */
+  border-radius: 5px;
+}
+.right-panel::-webkit-scrollbar-track {
+  background: #e8e8e8;
+}
+
 /* Section */
 .section {
   margin-bottom: 24px;
@@ -37,14 +48,30 @@
   border-bottom: none;
 }
 
-.icon {
-  font-size: 18px;
+/* SVG icons for notifications */
+.icon-svg {
+  width: 32px;
+  height: 32px;
 }
+
+/* Avatar styling */
 .avatar {
   width: 32px;
   height: 32px;
   border-radius: 50%;
+  object-fit: cover;
+  position: relative;
 }
+
+/* Line through Activities avatars */
+.activities-section .activity-item .avatar-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+/* Text & Time */
 .text {
   font-size: 14px;
   color: #111827;

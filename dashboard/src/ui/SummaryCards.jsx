@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/SummaryCards.css';
+import UpIcon from '../assets/maindash/up.svg';
+import DownIcon from '../assets/maindash/down.svg';
 
 const cardData = [
   {
@@ -35,9 +37,13 @@ function SummaryCards() {
         <div className={`summary-card ${card.accent}`} key={card.label}>
           <div className="card-label">{card.label}</div>
           <div className="card-value">{card.value}</div>
-          <div className={`card-change ${card.change.startsWith('+') ? 'positive' : 'negative'}`}>
-            {card.change} <span role="img" aria-label="trend">📈</span>
-          </div>
+            <div className={`card-change ${card.change.startsWith('+') ? 'positive' : 'negative'}`}>
+              {card.change}
+              <img
+              src={card.change.startsWith('+') ? UpIcon : DownIcon}
+              alt={card.change.startsWith('+') ? "trend up" : "trend down"}
+              className="trend-icon"/>
+              </div>
         </div>
       ))}
     </div>

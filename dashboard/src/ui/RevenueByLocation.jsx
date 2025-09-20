@@ -1,4 +1,6 @@
 import React from 'react';
+import '../styles/RevenueByLocation.css'; 
+import MapSVG from '../assets/maindash/Map.svg'; 
 
 const locs = [
   { city: 'New York', revenue: '72K' },
@@ -11,7 +13,12 @@ function RevenueLocation() {
   return (
     <div className="location-card">
       <div className="location-title">Revenue by Location</div>
-      <div className="location-map">[Map Placeholder]</div>
+
+      {/* SVG map */}
+      <div className="location-map">
+        <img src={MapSVG} alt="Map" className="map-svg" />
+      </div>
+
       <div className="location-list">
         {locs.map(loc => (
           <div className="location-row" key={loc.city}>

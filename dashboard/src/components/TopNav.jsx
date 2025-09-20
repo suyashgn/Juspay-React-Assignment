@@ -33,6 +33,7 @@ const TopNav = () => {
         <img src={sunIcon} alt="theme" className="icon" />
         <img src={historyIcon} alt="history" className="icon" />
         <img src={bellIcon} alt="notifications" className="icon" />
+        <img src={menuIcon} alt="menu" className="icon" />
       </div>
     </nav>
   );

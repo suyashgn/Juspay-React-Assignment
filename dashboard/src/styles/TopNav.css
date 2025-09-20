@@ -37,9 +37,9 @@
   display: flex;
   align-items: center;
   background: #f3f4f6;
-  padding: 0.25rem 0.75rem;
+  padding: 8px 20px;
   border-radius: 8px;
-  width: 280px;
+  width: 240px;
 }
 
 .search-box input {

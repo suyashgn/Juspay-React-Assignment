@@ -4,21 +4,32 @@ import SummaryCards from "../ui/SummaryCards.jsx";
 import ProjectionsChart from "../ui/ProjectionsChart.jsx";
 import RevenueTrend from "../ui/RevenueTrend.jsx";
 import RevenueByLocation from "../ui/RevenueByLocation.jsx";
+import TopSellingProducts from "../ui/TopSellingProducts.jsx";    
+import TotalSales from "../ui/TotalSales.jsx";
 
 function DashboardCenter() {
   return (
     <main className="dashboard-center">
-      {/* Row with Summary + Projections */}
+      <div className="titlemain">
+         <h2 className="section-title">eCommerce</h2>
+      </div>
       <div className="dashboard-row top-row">
         <SummaryCards />
         <ProjectionsChart />
       </div>
 
-      {/* Row with Revenue Trend + Revenue by Location */}
-      <div className="dashboard-row">
+      {/* Bottom row: Revenue Trend + Revenue by Location */}
+      <div className="dashboard-row bottom-row">
         <RevenueTrend />
         <RevenueByLocation />
       </div>
+       
+      <div className="dashboard-row bottom-row2">
+        <TopSellingProducts />
+        <TotalSales />
+        
+      </div>
+
     </main>
   );
 }

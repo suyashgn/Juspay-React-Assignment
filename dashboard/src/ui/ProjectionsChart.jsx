@@ -1,5 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import '../styles/ProjectionsChart.css';
 
 const chartData = [
   { name: 'Jan', Actual: 20, Projection: 23 },
@@ -19,8 +20,8 @@ function ProjectionsChart() {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Bar dataKey="Actual" stackId="a" fill="#bfe2fb" />
-          <Bar dataKey="Projection" stackId="a" fill="#3e9af3" />
+          <Bar dataKey="Actual" stackId="a" fill="#A8C5DA" />
+          <Bar dataKey="Projection" stackId="a" fill="#CFDFEB" />
         </BarChart>
       </ResponsiveContainer>
     </div>

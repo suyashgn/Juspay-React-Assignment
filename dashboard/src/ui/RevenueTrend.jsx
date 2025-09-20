@@ -1,5 +1,6 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import '../styles/RevenueTrend.css';
 
 const revenueData = [
   { month: 'Jan', current: 12, prev: 17 },
@@ -24,8 +25,8 @@ function RevenueTrend() {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="current" stroke="#3e9af3" strokeWidth={3} dot={false} />
-          <Line type="monotone" dataKey="prev" stroke="#222" strokeDasharray="4" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="current" stroke="#A8C5DA" strokeWidth={3} dot={false} />
+          <Line type="monotone" dataKey="prev" stroke="#000000ff" strokeDasharray="4" strokeWidth={2} dot={false} />
         </LineChart>
       </ResponsiveContainer>
     </div>

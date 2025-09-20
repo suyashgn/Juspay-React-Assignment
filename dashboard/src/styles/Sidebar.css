@@ -6,12 +6,22 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-
-  overflow-y: auto;       
-  scrollbar-width: thin;  
-  scrollbar-color: #d1d5db transparent; 
+  overflow-y: auto;  
+     
 }
 
+
+
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #a8aeb5; /* light gray thumb */
+  border-radius: 5px;
+}
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
 
 /* Profile */
 .profile {
@@ -100,14 +110,5 @@
 
 .arrow.rotate {
   transform: rotate(90deg);
-}/* Chrome/Edge scroll style */
-.sidebar::-webkit-scrollbar {
-  width: 6px;
 }
-.sidebar::-webkit-scrollbar-thumb {
-  background-color: #d1d5db; /* light gray thumb */
-  border-radius: 3px;
-}
-.sidebar::-webkit-scrollbar-track {
-  background: transparent;
-}
+
