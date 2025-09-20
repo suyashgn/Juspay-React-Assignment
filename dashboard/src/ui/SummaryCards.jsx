@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/SummaryCards.css';
 import UpIcon from '../assets/maindash/up.svg';
 import DownIcon from '../assets/maindash/down.svg';
+import { useNavigate } from 'react-router-dom';
 
 const cardData = [
   {
@@ -15,6 +16,7 @@ const cardData = [
     value: '1,219',
     change: '-0.03%',
     accent: '',
+    navigate: true,
   },
   {
     label: 'Revenue',
@@ -31,19 +33,32 @@ const cardData = [
 ];
 
 function SummaryCards() {
+  const navigate = useNavigate();
+
   return (
     <div className="summary-cards">
       {cardData.map((card) => (
-        <div className={`summary-card ${card.accent}`} key={card.label}>
+        <div
+          key={card.label}
+          className={`summary-card ${card.accent} ${card.navigate ? 'clickable' : ''}`}
+          onClick={() => {
+            if (card.navigate) navigate('/orders'); // navigate only for Orders card
+          }}
+        >
           <div className="card-label">{card.label}</div>
           <div className="card-value">{card.value}</div>
-            <div className={`card-change ${card.change.startsWith('+') ? 'positive' : 'negative'}`}>
-              {card.change}
-              <img
+          <div
+            className={`card-change ${
+              card.change.startsWith('+') ? 'positive' : 'negative'
+            }`}
+          >
+            {card.change}
+            <img
               src={card.change.startsWith('+') ? UpIcon : DownIcon}
-              alt={card.change.startsWith('+') ? "trend up" : "trend down"}
-              className="trend-icon"/>
-              </div>
+              alt={card.change.startsWith('+') ? 'trend up' : 'trend down'}
+              className="trend-icon"
+            />
+          </div>
         </div>
       ))}
     </div>

@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from "./components/Sidebar";
-import RightPanel from "./components/Rightpanel";
 import TopNav from "./components/TopNav";
-import CenterDashboard from './components/CenterDashboard.jsx';
+import RightPanel from "./components/Rightpanel";
+import CenterDashboard from "./components/CenterDashboard";
+import OrdersPage from "./pages/orders";
 
-import './App.css'
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
   return (
-    <div style={{ display: "flex" }}>
-      {/* Left Sidebar */}
-      <Sidebar />
+    <Router>
+      <Routes>
+        {/* Dashboard Page with TopNav and RightPanel */}
+        <Route
+          path="/"
+          element={
+            <div style={{ display: "flex" }}>
+              <Sidebar />
+              <main style={{ flex: 1, padding: "20px" }}>
+                <TopNav />
+                <div style={{ background: "#fff", minHeight: "calc(100vh - 80px)" }}>
+                  <CenterDashboard />
+                </div>
+              </main>
+              <RightPanel />
+            </div>
+          }
+        />
 
-      {/* Main Dashboard Content */}
-      <main style={{ flex: 1, padding: "20px" }}>
-        <TopNav/>
-
-    <div style={{background: "#fff" }}>
-      <CenterDashboard />
-    </div>
-
-      </main>
-
-      {/* Right Panel */}
-      <RightPanel />
-    </div>
+        {/* Orders Page with only Sidebar */}
+        <Route
+          path="/orders"
+          element={<OrdersPage />}
+        />
+      </Routes>
+    </Router>
   );
 }
 
-export default App
+export default App;
