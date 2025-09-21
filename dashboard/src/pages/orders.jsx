@@ -1,7 +1,7 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
-import TopNav from "../components/TopNav";
-import OrdersTable from "./OrdersTable";
+import Sidebar from "../components/Sidebar.jsx";
+import TopNav from "../components/TopNa.jsx";
+import OrdersTable from "./OrdersTable.jsx";
 import "../styles/OrdersPage.css";
 
 function OrdersPage() {

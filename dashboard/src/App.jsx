@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
-import TopNav from "./components/TopNav";
-import RightPanel from "./components/Rightpanel";
-import CenterDashboard from "./components/CenterDashboard";
+import Sidebar from "./components/Sidebar.jsx";
+import TopNav from "./components/TopNav.jsx";
+import RightPanel from "./components/RightPanel.jsx";
+import CenterDashboard from "./components/CenterDashboard.jsx";
 import OrdersPage from "./pages/orders";
 
 import './App.css';
