@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://suyashneware.github.io/Juspay-React-Assignment",
+  "homepage": "https://<your-username>.github.io/Juspay-React-Assignment",
   "dependencies": {
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
