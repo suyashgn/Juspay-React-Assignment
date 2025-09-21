@@ -3,8 +3,8 @@ import "../styles/OrdersPage.css";
 import { useNavigate } from "react-router-dom";
 
 // Import SVG icons
-import PlusIcon from "../assets/order/add.svg";
-import SearchIcon from "../assets/order/search.svg";
+import PlusIcon from "../assets/order/Add.svg";
+import SearchIcon from "../assets/order/Search.svg";
 import FilterIcon from "../assets/order/filter.svg";
 import ArrowDownIcon from "../assets/order/sort.svg";
 import ArrowLeftIcon from "../assets/order/ArrowLineLeft.svg";
