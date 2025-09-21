@@ -10,6 +10,7 @@
   background: #f5f8fa;
   border-radius: 16px;
   padding: 20px;
+  row-gap:  8px;
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease;
@@ -24,14 +25,6 @@
   font-size: 14px;
   font-weight: 600;
   color: #444;
-}
-
-/* Row: value + change */
-.card-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 4px;
 }
 
 .card-value {
