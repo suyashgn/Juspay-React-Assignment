@@ -1,13 +1,17 @@
-// Import SVG icons from assets
-// import { ReactComponent as PlusIcon } from "../assets/order/Add.svg";
-// import { ReactComponent as SearchIcon } from "../assets/order/Search.svg";
-// import { ReactComponent as FilterIcon } from "../assets/order/filter.svg";
-// import { ReactComponent as SortIcon } from "../assets/order/sort.svg";
-
 import React, { useState } from "react";
 import "../styles/OrdersPage.css";
+import { useNavigate } from "react-router-dom";
+
+// Import SVG icons
+import PlusIcon from "../assets/order/add.svg";
+import SearchIcon from "../assets/order/search.svg";
+import FilterIcon from "../assets/order/filter.svg";
+import ArrowDownIcon from "../assets/order/sort.svg";
+import ArrowLeftIcon from "../assets/order/ArrowLineLeft.svg";
 
 const OrdersTable = () => {
+  const navigate = useNavigate(); 
+
   const initialOrders = [
     { id: "#CMP801", user: "Natali Craig", project: "Landing Page", address: "Meadow Lane Oakland", date: "Just now", status: "In Progress" },
     { id: "#CMP802", user: "Kate Morrison", project: "CRM Admin pages", address: "Larry San Francisco", date: "A minute ago", status: "Complete" },
@@ -21,7 +25,7 @@ const OrdersTable = () => {
     { id: "#CMP810", user: "Andi Lane", project: "App Landing Page", address: "Nest Lane Olivette", date: "Feb 2, 2023", status: "Rejected" },
   ];
 
-  const [orders, setOrders] = useState(initialOrders);
+  const [orders] = useState(initialOrders);
   const [sortConfig, setSortConfig] = useState({ key: "id", direction: "asc" });
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState("");
@@ -61,32 +65,48 @@ const OrdersTable = () => {
 
   return (
     <div className="orders-container">
+      {/* ✅ Back CTA */}
+      <button className="back-cta" onClick={() => navigate("/")}>
+        <img src={ArrowLeftIcon} alt="Back" className="back-icon" />
+        <span>Back</span>
+      </button>
+
       <h2 className="orders-title">Order List</h2>
 
       {/* Controls */}
       <div className="orders-controls">
-        <button className="btn-add">+ Add Order</button>
+        <div className="controls-left">
+          <img src={PlusIcon} alt="Add" className="icon-cta add-cta" />
+          <img src={FilterIcon} alt="Filter" className="icon-cta" />
+        </div>
 
-        <input
-          type="text"
-          placeholder="Search orders..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="search-input"
-        />
+        <div className="search-wrapper">
+          <img src={SearchIcon} alt="Search" className="search-icon" />
+          <input
+            type="text"
+            placeholder="Search orders..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="search-input"
+          />
+        </div>
 
-        <select
-          value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value)}
-          className="filter-select"
-        >
-          <option value="All">All Status</option>
-          <option value="In Progress">In Progress</option>
-          <option value="Complete">Complete</option>
-          <option value="Pending">Pending</option>
-          <option value="Approved">Approved</option>
-          <option value="Rejected">Rejected</option>
-        </select>
+        {/* Custom dropdown */}
+        <div className="select-wrapper">
+          <select
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+            className="filter-select"
+          >
+            <option value="All">All Status</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Complete">Complete</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+          <img src={ArrowDownIcon} alt="arrow" className="select-arrow" />
+        </div>
       </div>
 
       {/* Table */}
@@ -141,4 +161,4 @@ const OrdersTable = () => {
   );
 };
 
-export default OrdersTable;  
+export default OrdersTable;

@@ -22,7 +22,7 @@ const TopNav = () => {
       {/* Center */}
       <div className="nav-center">
         <div className="search-box">
-          <img src={searchIcon} alt="search" className="search-icon" />
+          <img src={searchIcon} alt="search" className="search-iconn" />
           <input type="text" placeholder="Search" />
           <span className="shortcut">⌘ /</span>
         </div>
